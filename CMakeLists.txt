@@ -20,7 +20,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(WARNINGS_AS_ERRORS OFF)
 
 #! Always use PVS Studio while developing. 
-set(ENABLE_PVS_STUDIO OFF)
+set(ENABLE_PVS_STUDIO ON)
 
 #! Select appropriate sanitizers.
 #  Definitely enable sanitizers while developing.
@@ -56,7 +56,7 @@ include(cmake/CompilerWarnings.cmake)
 
 #! Project main executable source compilation
 add_executable(${PROJECT_NAME} src/main.cpp
-				src/options_parser.cpp inc/options_parser.h)
+				src/options_parser.cpp inc/options_parser.h inc/errors.h)
 
 #! Put path to your project headers
 target_include_directories(${PROJECT_NAME} PRIVATE inc)

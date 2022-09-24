@@ -25,7 +25,7 @@ int main() {
     size_t nec_len = 2e9;
 
     std::ofstream myfile;
-    myfile.open("large_ex.txt");
+    myfile.open("extra_large_1.txt");
     std::string str;
     str.resize(str_len);
     size_t total_len = 0;
