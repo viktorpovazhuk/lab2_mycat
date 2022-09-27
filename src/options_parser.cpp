@@ -15,7 +15,7 @@ command_line_options_t::command_line_options_t() {
             ("help,h",
              "Show help message")
             ("print_trans,A",
-             "Print transparent symbols")
+             "Print hex representation instead of transparent symbols")
             ("files",
              po::value<std::vector<std::string>>()->
              multitoken()->zero_tokens()->composing(),

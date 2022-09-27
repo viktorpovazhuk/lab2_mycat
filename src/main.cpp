@@ -1,3 +1,6 @@
+// This is a personal academic project. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: https://pvs-studio.com
+
 #include "options_parser.h"
 #include "errors.h"
 
@@ -26,7 +29,7 @@ void print_buffer(uniq_char_ptr &buf, size_t buf_size) {
             if (errno == EINTR) {
                 continue;
             } else {
-                perror(nullptr);
+                perror("Error while printing buffer");
                 exit(errno);
             }
         }
@@ -43,7 +46,7 @@ size_t read_buffer(int fd, uniq_char_ptr &buf_ptr, size_t buf_capacity) {
             if (errno == EINTR) {
                 continue;
             } else {
-                perror(nullptr);
+                perror("Error while reading file in buffer");
                 exit(errno);
             }
         }
@@ -92,7 +95,7 @@ int main(int argc, char *argv[]) {
         std::string &cur_path = paths[i];
         int cur_fd = open(cur_path.c_str(), O_RDONLY);
         if (cur_fd == -1) {
-            perror(cur_path.c_str());
+            perror(("Error while opening file: " + cur_path).c_str());
             exit(errno);
         }
         fds[i] = cur_fd;
@@ -114,7 +117,7 @@ int main(int argc, char *argv[]) {
     for (int fd: fds) {
         int res = close(fd);
         if (res == -1) {
-            perror(nullptr);
+            perror("Error while closing file");
             exit(errno);
         }
     }

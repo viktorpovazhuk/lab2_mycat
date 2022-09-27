@@ -72,9 +72,9 @@ done
 
 
 if [[ "$debug_build" == true ]]; then
-  mkdir -p ./cmake-build-debug
+  mkdir -p ./hand-cmake-build-debug
   (
-    pushd ./cmake-build-debug > /dev/null || exit 1
+    pushd ./hand-cmake-build-debug > /dev/null || exit 1
     echo Compiling...
     cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX="${install_prefix}" .. || exit 1
     cmake --build . || exit 1
@@ -84,9 +84,9 @@ if [[ "$debug_build" == true ]]; then
 fi
 
 if [[ "$optimize_build" == true ]]; then
-  mkdir -p ./cmake-build-release
+  mkdir -p ./hand-cmake-build-release
   (
-    pushd ./cmake-build-release >/dev/null || exit 1
+    pushd ./hand-cmake-build-release >/dev/null || exit 1
     echo Compiling...
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${install_prefix}" .. || exit 1
     cmake --build . || exit 1
@@ -96,5 +96,5 @@ if [[ "$optimize_build" == true ]]; then
 fi
 
 if [[ "$remove_dirs" == true ]]; then
-  rm -rf ./cmake-build-debug ./cmake-build-release
+  rm -rf ./hand-cmake-build-debug ./hand-cmake-build-release
 fi

@@ -1,5 +1,6 @@
 samples/
 data/extra_large_1.txt
+/hand-cmake-build-release
 
 ### C++ ###
 # Prerequisites
