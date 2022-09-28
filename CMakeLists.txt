@@ -20,7 +20,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(WARNINGS_AS_ERRORS OFF)
 
 #! Always use PVS Studio while developing. 
-set(ENABLE_PVS_STUDIO ON)
+set(ENABLE_PVS_STUDIO OFF)
 
 #! Select appropriate sanitizers.
 #  Definitely enable sanitizers while developing.
